@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<rules>
+    <chain>MIQ_HARDEN</chain>
+    <rule>
+        <ports>3088,3089</ports>
+        <source>192.168.134.246,192.168.108.201</source>
+    </rule>
+    <rule>
+        <ports>3090</ports>
+        <source>192.168.134.0/24</source>
+    </rule>
+</rules>
