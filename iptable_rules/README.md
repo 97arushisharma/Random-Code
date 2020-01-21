@@ -20,3 +20,43 @@ Notice above:
 * -j : It stands for jumping to the chain mentioned after it.
 
 Some default actions are ACCEPT, DROP and REJECT.
+
+To verify that the rules have been created run the following command and search for the chain:
+
+     iptables -L -v --line-numbers
+
+To see the rules that have been applied with that particular chain run the following command:
+
+     iptables -S | grep <chain_name>
+     
+## To delete a chain :
+
+The below command deletes the chain from any referring chain. In our case the chain is removed from INPUT chain.
+
+     iptables -D INPUT -j <chain_name>
+
+Then, flush the entire chain i.e., delete all the rules from the chain.
+
+     iptables -F <chain_name>
+
+Finally, delete the chain.
+
+     iptables -X <chain_name>
+
+
+**Best Practices** - Inorder not to harm the system iptables configurations or to be able to restore them incase of some problem iptables allow us to save the iptable rules into a file using the iptables-save module:
+
+     /sbin/iptables-save > /opt/miq/firewall/iptables-works-`date +%FT%T`
+
+The file name format are as follows:
+
+     /opt/miq/firewall/iptables-works-2020-01-21T06:45:09
+
+If you do something that prevents your system from working properly, you can quickly restore it using the following command:
+
+     /sbin/iptables-restore < /opt/miq/firewall/iptables-works-2020-01-21T06:45:09
+     
+To add the new rules keeping the current ones:
+
+     sudo iptables-restore -n < /etc/sysconfig/iptables
+
