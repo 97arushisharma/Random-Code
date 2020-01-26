@@ -16,10 +16,12 @@ Notice above:
 * -A : It append the chain rule to the chain mention after it. use `man iptables` command to read more about it.
 * -p : It is for the protocol which needs to be affected. Again read the man page.
 * --match : It defines that there will be a match ahead. For our case it declares that there will be multiple ports. Read `man iptables-extensions`.
-* ! : It is an important flag. It negates the meaning of the option that follows it. In our case it means 'for all source ip-addresses except host_ip REJECT'.
+* ! : It is an important flag. It negates the meaning of the option that follows it. In our case it means 'for all source ip-addresses except host_ip REJECT'. However, it cannot be used for multiple source ip-addresses.
 * -j : It stands for jumping to the chain mentioned after it.
 
 Some default actions are ACCEPT, DROP and REJECT.
+
+**Note** - The maximum number of ports that can be declared in the --dports option is **15**.
 
 To verify that the rules have been created run the following command and search for the chain:
 
