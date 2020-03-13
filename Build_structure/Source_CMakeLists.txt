@@ -1,0 +1,34 @@
+cmake_minimum_required(VERSION 2.8)
+project(sample-project)
+
+execute_process(COMMAND cat .VERSION
+    COMMAND tr "\n" " "
+    COMMAND sed -e "s/ //"
+    WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
+    OUTPUT_VARIABLE PROJECT_VERSION)
+
+if(DEFINED ENV{BUILD_NUMBER})
+    set(PROJECT_RELEASE $ENV{BUILD_NUMBER})
+else()
+    set(PROJECT_RELEASE $ENV{RELEASE})
+endif()
+
+if(NOT PROJECT_RELEASE)
+    set(PROJECT_RELEASE 1)
+endif()
+
+message(STATUS "Project version set to ${PROJECT_VERSION}-${PROJECT_RELEASE}")
+
+set(CMAKE_OUTPUT_PREFIX ${CMAKE_SOURCE_DIR}/output)
+set(CMAKE_INSTALL_PREFIX ${CMAKE_OUTPUT_PREFIX}/install)
+set(CMAKE_RELEASE_DIR ${CMAKE_OUTPUT_PREFIX}/release)
+#set(DEP_DIR ${CMAKE_SOURCE_DIR}/lib)
+
+install(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/x DESTINATION
+        ${CMAKE_INSTALL_PREFIX}/opt/x)
+install(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/y DESTINATION
+        ${CMAKE_INSTALL_PREFIX}/opt/y)
+install(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/tools DESTINATION
+        ${CMAKE_INSTALL_PREFIX}/opt/z)
+
+add_subdirectory(a)
