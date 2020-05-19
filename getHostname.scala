@@ -19,7 +19,7 @@ object HelloWorld {
           return processReferer(referer)
         }
         referer = referer.replaceAll("//","/")
-        if(referer.startsWith("/")) referer.split("/")(1)
+        if(referer.startsWith("/")) processReferer(referer.replaceAll("^[/]+|[/]+$", ""))
         else referer.split("/")(0)
     }
       
