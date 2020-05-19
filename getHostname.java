@@ -19,7 +19,7 @@ public class getHostname {
             }
             url = url.replaceAll("//","/");
             if(url.startsWith("/")){
-                    return url.split("/")[1];
+                    return processURLforHostname(url.replaceAll("^[/]+|[/]+$", ""));
             }else{
                     return url.split("/")[0];
             }
@@ -35,6 +35,7 @@ public class getHostname {
         String str2 = "http:/53";
         String str3 = "https://https://secure.netflix.com/us/tvui/release-2016_02_29-46/13_3/sapphire/720p/gibbon/signupwizard.js?nrdjsSuffix=nrdjs%2Fv2.21.7-23";
         String str4 = "://yytingting.com62";
+        String str5 = "/";
         //String[] arrOfStr = str.split("http://|https://|,",2);
         String hostname = processURLforHostname(str4);
         System.out.println(hostname);
