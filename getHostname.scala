@@ -35,6 +35,7 @@ object HelloWorld {
         var str5 : String = "https://www-m.cnn.com/2018/05/23/europe/yulia,skripal-nerve-agent-recovery-intl/index.html49"
         var str6 : String = "ftp:/abcdefgh.edu/hello"
         var str7 : String = "ftp://http://http://[fdf8:f53b:82e4::53]"
+        var str8 : String = "/"
         //String[] arrOfStr = str.split("http://|https://|,",2);
         var hostname : String = processReferer(str7)
         println("..."+hostname+"...")
