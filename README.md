@@ -5,7 +5,7 @@ This repo contains random code snippets that might be useful for a developer.
 * [getHostname.scala](https://github.com/97arushisharma/Random-Code/blob/master/getHostname.scala) - It is a code snippet that extracts hostname from a url which can be malformed but this time in scala.
 * [iptable_rules](https://github.com/97arushisharma/Random-Code/tree/master/iptable_rules) - It contains the steps to create a new iptable rule that accepts the tcp packets only from some particular ip-addresses and over some specific ports. It also contains the steps to verify that the rules are working.
 * [Build_structure](https://github.com/97arushisharma/Random-Code/tree/master/Build_structure) - It contains the CMake files and build script to automate the building(creating RPMs) of a project.
-* [Encodings.java](https://github.com/97arushisharma/Random-Code/tree/master/Encodings.java) - See the following link [Java Strings](https://javarevisited.blogspot.com/2013/07/java-string-tutorial-and-examples-beginners-programming.html)
+* [Encoding.java](https://github.com/97arushisharma/Random-Code/tree/master/Encoding.java) - See the following link [Java Strings](https://javarevisited.blogspot.com/2013/07/java-string-tutorial-and-examples-beginners-programming.html)
 
 
 ## Some Useful Commands:
