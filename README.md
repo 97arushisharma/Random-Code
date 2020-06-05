@@ -38,7 +38,7 @@ Here `60` is the number of seconds to elapse between two consecutive readings.
 To record the CPU and Memory utilisation of a docker container use the following command:
 
 >     while ((1)); do o=$(docker stats --no-stream --format='{{.Container}}\t{{.CPUPerc}}\t{{.MemUsage}}' <containerID>); \
-t=$(date '+%F %T'); echo "$t $o"; done
+>     t=$(date '+%F %T'); echo "$t $o"; done
 
 Here `<containerID>` is the container ID fetched using the `docker ps` command.
 
