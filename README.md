@@ -7,6 +7,10 @@ This repo contains random code snippets that might be useful for a developer.
 * [Build_structure](https://github.com/97arushisharma/Random-Code/tree/master/Build_structure) - It contains the CMake files and build script to automate the building(creating RPMs) of a project.
 * [Encoding.java](https://github.com/97arushisharma/Random-Code/tree/master/Encoding.java) - See the following link [Java Strings](https://javarevisited.blogspot.com/2013/07/java-string-tutorial-and-examples-beginners-programming.html)
 * [Calendar.cpp](https://github.com/97arushisharma/Random-Code/blob/master/Calendar.cpp) - A basic day finder by entering the date in C++. It can be any day of any year.
+* [replay_pcap.py](https://github.com/97arushisharma/Random-Code/blob/master/replay_pcap.py) - This script is used to send packet data from the pcap filr to the give destination collector host and port. The command to run the given script is:
+
+>     python replay_pcap.py -f <pcap_file_path> -p <destination_port> -c <destination_host_ip>
+
 
 
 ## Some Useful Commands:
