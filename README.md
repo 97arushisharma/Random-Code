@@ -23,6 +23,14 @@ This repo contains random code snippets that might be useful for a developer.
   
 2.) *Ncat*: Think of it as a free and easy companion tool to use which specializes in the analysis of network packets. It is a utility program supports a wide range of commands to manage networks and monitor the flow of traffic data between systems. Look [here](https://www.varonis.com/blog/netcat-commands/).
 
+ >     nc -u <ip-address> <port>
+ 
+ On the above mentioned ip address listen on the port using below command
+
+ >     nc -l <port>
+
+NOTE: `-u` is used for udp data. Incase the data is tcp remove that flag.
+
 3.) *Telnet*:
 
 ### Memory and CPU utilisation
@@ -48,3 +56,20 @@ To record the CPU and Memory utilisation of a docker container use the following
 Here `<containerID>` is the container ID fetched using the `docker ps` command.
 
 ### Kafka Commands
+
+To list topics:
+>     bin/kafka-topics.sh --list --zookeeper localhost:2181
+
+To get topic offset for each partition:
+>     bin/kafka-run-class.sh kafka.tools.GetOffsetShell --broker-list <broker-ip>:<broker-port> --topic Topic --time -1
+
+To get total messages for a topic:
+>     while true; do bin/kafka-run-class.sh kafka.tools.GetOffsetShell --broker-list <broker-ip>:<broker-port> --topic Topic --time -1 | awk -F ":" '{sum += $3} END {print sum}'; done
+ 
+To get the broker-port see the Kafka broker.conf
+
+To delete a topic:
+>     bin/kafka-topics.sh --zookeeper localhost:2181 --delete --topic Topic
+
+To create a topic:
+>     bin/kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 2 --partitions 6 --topic Topic
