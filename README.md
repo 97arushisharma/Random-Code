@@ -21,7 +21,7 @@ This repo contains random code snippets that might be useful for a developer.
  
  >     nmap -p <port> <remote-host>
   
-2.) *Ncat*: Think of it as a free and easy companion tool to use which specializes in the analysis of network packets. It is a utility program supports a wide range of commands to manage networks and monitor the flow of traffic data between systems. Look [here](https://www.varonis.com/blog/netcat-commands/).
+2.) *Ncat*: Think of it as a free and easy companion tool to use which specializes in the analysis of network packets. It is a utility program supports a wide range of commands to manage networks and monitor the flow of traffic data between systems. Look [here](https://www.digitalocean.com/community/tutorials/how-to-use-netcat-to-establish-and-test-tcp-and-udp-connections-on-a-vps).
 
  >     nc -u <ip-address> <port>
  
