@@ -55,6 +55,17 @@ To record the CPU and Memory utilisation of a docker container use the following
 
 Here `<containerID>` is the container ID fetched using the `docker ps` command.
 
+We can also use `pidstat` command for resource utilisation of a process:
+
+For memory:
+>     pidstat -p 44205 -r 30 50
+
+For CPU:
+>     pidstat -I -p 44205 -u 30 50
+
+For disk:
+>     pidstat -p 44205 -d 30 50
+
 ### Kafka Commands
 
 To list topics:
@@ -73,3 +84,22 @@ To delete a topic:
 
 To create a topic:
 >     bin/kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 2 --partitions 6 --topic Topic
+
+To use the console consumer:
+>     bin/kafka-console-consumer.sh --bootstrap-server localhost:6667 --topic Topic
+ 
+### Kafka Producer Performance Tuning
+
+For the purpose of tuning we can use the following properties:
+```
+acks
+compression.type
+retries
+batch.size
+linger.ms
+max.in.flight.requests.per.connection
+max.request.size
+request.timeout.ms
+partition.assignment.strategy
+buffer.memory
+```
