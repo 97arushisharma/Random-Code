@@ -1,0 +1,27 @@
+import java.io.*;
+//import org.junit.Test;
+public class HelloWorld{
+
+     public static void main(String []args) throws IOException {
+        System.out.println("Hello World");
+
+        String str = "foo\n\r\nbar";
+    BufferedWriter writer = new BufferedWriter(new FileWriter("tmpfile.txt"));
+    writer.write(str);
+
+    writer.close();
+    //File tmpFile = File.createTempFile("test", ".tmp");
+    //FileWriter writer = new FileWriter(tmpFile);
+    //writer.write(str);
+    //writer.close();
+
+    BufferedReader reader = new BufferedReader(new FileReader("tmpfile.txt"));
+    System.out.println(str == reader.readLine());
+    System.out.println("1");
+    System.out.println(str);
+    System.out.println("2");
+    System.out.println(reader.readLine());
+    //assertEquals(str, reader.readLine()reader.readLine());
+    reader.close();
+     }
+}
