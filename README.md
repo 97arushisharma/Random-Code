@@ -103,3 +103,5 @@ request.timeout.ms
 partition.assignment.strategy
 buffer.memory
 ```
+ 
+### Keepalived service for Virtual IP address
