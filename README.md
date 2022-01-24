@@ -105,3 +105,4 @@ buffer.memory
 ```
  
 ### Keepalived service for Virtual IP address
+https://www.redhat.com/sysadmin/keepalived-basics
