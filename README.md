@@ -11,7 +11,7 @@ This repo contains random code snippets that might be useful for a developer.
 
 >     python replay_pcap.py -f <pcap_file_path> -p <destination_port> -c <destination_host_ip>
 
-
+Packet Dissectors: https://www.sewio.net/open-sniffer/develop/how-to-compile-your-wireshark-dissector/
 
 ## Some Useful Commands:
 
